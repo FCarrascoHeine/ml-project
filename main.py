@@ -1,22 +1,9 @@
 from sklearn.datasets import load_iris, load_wine
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
 
-def choose_option(options, prompt):
-    print(prompt)
-    for i, option in enumerate(options):
-        print(f"{i + 1}. {option}")
-    choice = input("Enter the number of your choice: ")
-    try:
-        choice_idx = int(choice) - 1
-        if 0 <= choice_idx < len(options):
-            return choice_idx
-    except ValueError:
-        pass
-    print("Invalid choice, please try again.")
-    return choose_option(options, prompt)
+from chooser import OptionChooser
+from trainer import MLTrainer
 
 def main():
     datasets = {
@@ -28,22 +15,20 @@ def main():
         "Decision Tree": DecisionTreeClassifier()
     }
 
-    dataset_names = list(datasets.keys())
-    model_names = list(models.keys())
+    dataset_chooser = OptionChooser(list(datasets.keys()), "Choose a dataset:")
+    model_chooser = OptionChooser(list(models.keys()), "Choose a model:")
 
-    dataset_idx = choose_option(dataset_names, "Choose a dataset:")
-    model_idx = choose_option(model_names, "Choose a model:")
+    dataset_name = list(datasets.keys())[dataset_chooser.get_choice()]
+    model_name = list(models.keys())[model_chooser.get_choice()]
 
-    data = datasets[dataset_names[dataset_idx]]()
-    X_train, X_test, y_train, y_test = train_test_split(data.data, data.target, random_state=42)
+    data = datasets[dataset_name]()
+    model = models[model_name]
 
-    model = models[model_names[model_idx]]
-    model.fit(X_train, y_train)
-    preds = model.predict(X_test)
-    accuracy = accuracy_score(y_test, preds)
+    trainer = MLTrainer(model, data)
+    accuracy = trainer.train_and_evaluate()
 
-    print(f"\nModel: {model_names[model_idx]}")
-    print(f"Dataset: {dataset_names[dataset_idx]}")
+    print(f"\nModel: {model_name}")
+    print(f"Dataset: {dataset_name}")
     print(f"Accuracy: {accuracy:.2f}")
 
 if __name__ == "__main__":
