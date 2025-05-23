@@ -1,17 +1,34 @@
-from utils import choose_option
-from ml_pipeline import run_ml_pipeline
+from sklearn.datasets import load_iris, load_wine
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+
+from chooser import OptionChooser
+from trainer import MLTrainer
 
 def main():
-    dataset_names = ["Iris", "Wine"]
-    model_names = ["Logistic Regression", "Decision Tree"]
+    datasets = {
+        "Iris": load_iris,
+        "Wine": load_wine
+    }
+    models = {
+        "Logistic Regression": LogisticRegression(max_iter=200),
+        "Decision Tree": DecisionTreeClassifier()
+    }
 
-    dataset_idx = choose_option(dataset_names, "Choose a dataset:")
-    model_idx = choose_option(model_names, "Choose a model:")
+    dataset_chooser = OptionChooser(list(datasets.keys()), "Choose a dataset:")
+    model_chooser = OptionChooser(list(models.keys()), "Choose a model:")
 
-    accuracy = run_ml_pipeline(dataset_names[dataset_idx], model_names[model_idx])
+    dataset_name = list(datasets.keys())[dataset_chooser.get_choice()]
+    model_name = list(models.keys())[model_chooser.get_choice()]
 
-    print(f"\nModel: {model_names[model_idx]}")
-    print(f"Dataset: {dataset_names[dataset_idx]}")
+    data = datasets[dataset_name]()
+    model = models[model_name]
+
+    trainer = MLTrainer(model, data)
+    accuracy = trainer.train_and_evaluate()
+
+    print(f"\nModel: {model_name}")
+    print(f"Dataset: {dataset_name}")
     print(f"Accuracy: {accuracy:.2f}")
 
 if __name__ == "__main__":
