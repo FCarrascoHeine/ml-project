@@ -1,6 +1,8 @@
 # Simple ML Pipeline
 
-This repository contains a simple machine learning pipeline implemented in Python. It is still under construction, but currently, it allows the user to:
+Status: Under Construction 🚧
+
+This repository is an evolving Python project focused on building a simple, interactive machine learning pipeline. Currently, it allows the user to:
 
 - Choose between two datasets: **Iris** and **Wine**.
 - Choose between two classification algorithms: **Logistic Regression** and **Decision Tree**.
