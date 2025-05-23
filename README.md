@@ -1,6 +1,6 @@
 # Simple ML Pipeline
 
-Status: Under Construction 🚧
+**Status:** Under Construction 🚧
 
 This repository is an evolving Python project focused on building a simple, interactive machine learning pipeline. Currently, it allows the user to:
 
