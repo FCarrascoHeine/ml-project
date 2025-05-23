@@ -2,8 +2,8 @@ from sklearn.datasets import load_iris, load_wine
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 
-from chooser import OptionChooser
-from trainer import MLTrainer
+from src.chooser import OptionChooser
+from src.trainer import MLTrainer
 
 def main():
     datasets = {
