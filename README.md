@@ -13,6 +13,7 @@ This repository is an evolving Python project focused on building a simple, inte
 - Users can choose among several machine learning algorithms.
 - Users can select from a few predefined datasets.
 - Basic structure set up for future enhancements.
+- **Basic unit tests included** for key components (`OptionChooser` and `MLTrainer`), with tests running automatically on GitHub Actions on pushes and pull requests.
 
 ## What the script does now
 
@@ -30,14 +31,22 @@ This repository is an evolving Python project focused on building a simple, inte
 ## How to run
 
 1. Make sure you have the required packages installed (see `requirements.txt`).
-2. Run `python main.py`.
+2. Run `python -m src.main`.
 3. Follow the prompts to select the dataset and model.
+
+## Testing
+
+- Run tests locally with:  
+  ```
+  pytest
+  ```
+- Tests are automatically run on GitHub Actions for every push and pull request.
 
 ## Next Steps
 
 - Adding support for user-provided data.
 - Implementing training parameter configuration.
-- Writing tests and setting up CI/CD.
-- Automating deployment.
+- Expanding test coverage.
+- Setting up Continuous Deployment (CD) to automate deployment.
 
 Feel free to explore and contribute!
