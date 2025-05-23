@@ -36,10 +36,7 @@ This repository is an evolving Python project focused on building a simple, inte
 
 ## Testing
 
-- Run tests locally with:  
-  ```
-  pytest
-  ```
+- Run tests locally with `pytest`
 - Tests are automatically run on GitHub Actions for every push and pull request.
 
 ## Next Steps
