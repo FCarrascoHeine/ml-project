@@ -39,3 +39,5 @@ This repository is an evolving Python project focused on building a simple, inte
 - Implementing training parameter configuration.
 - Writing tests and setting up CI/CD.
 - Automating deployment.
+
+Feel free to explore and contribute!
