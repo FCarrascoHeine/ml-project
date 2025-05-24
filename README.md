@@ -14,7 +14,7 @@ This repository is an evolving Python project focused on building a simple, inte
 - Users can select from a few predefined datasets.
 - Basic structure set up for future enhancements.
 - **Basic unit and integration tests included**, with tests running automatically on GitHub Actions on pushes and pull requests.
-- Dockerfile included, allowing for seamless creation of docker images.
+- **Automatic image creation and push to Docker Hub** on changes to the `main` branch, via GitHub Actions.
 
 ## What the script does now
 
@@ -35,27 +35,26 @@ This repository is an evolving Python project focused on building a simple, inte
 2. Run `python -m src.main`.
 3. Follow the prompts to select the dataset and model.
 
-## Docker: Build and test images
-
-To build and test a Docker image for this project locally, ensure you have [Docker installed and running](https://docs.docker.com/get-docker/).
-
-1. **Build the image** (assuming the project directory contains the Dockerfile):
-```
-docker build -t ml-project .
-```
-
-2. **Run the container** to test the app inside Docker:
-```
-docker run -it --rm ml-project
-```
-This command runs the CLI app interactively inside the container, similar to running `python -m src.main` locally.
-
-This workflow allows you to verify the Dockerized app behaves as expected before pushing the image to a container registry or setting up automated deployment.
-
 ## Testing
 
 - Run tests locally with `pytest`
 - Tests are automatically run on GitHub Actions for every push and pull request.
+
+## Docker image
+
+- A Dockerfile is included for containerization.
+- On every push to the `main` branch, a new Docker image is automatically built and pushed to Docker Hub.
+
+### Testing Docker images locally
+
+You can test the most recent image locally by running:
+
+```bash
+docker pull your-dockerhub-username/ml-project:latest
+docker run -it --rm your-dockerhub-username/ml-project:latest
+```
+
+Replace `your-dockerhub-username` with your actual Docker Hub username.
 
 ## Next steps
 
