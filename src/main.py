@@ -32,7 +32,7 @@ def main() -> None:
     data = datasets[dataset_name]()
     model = models[model_name]
 
-    trainer = MLTrainer(model, data)
+    trainer = MLTrainer(model, data) # type: ignore
     accuracy = trainer.train_and_evaluate()
 
     print(f"\nModel: {model_name}")

@@ -19,4 +19,4 @@ class MLTrainer:
         self.model.fit(X_train, y_train)
         preds = self.model.predict(X_test)
         accuracy = accuracy_score(y_test, preds)
-        return accuracy
+        return accuracy # type: ignore
