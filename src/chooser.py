@@ -1,17 +1,17 @@
 class OptionChooser:
     """Creates objects used to get input from the user."""
-    def __init__(self, options, prompt) -> None:
+    def __init__(self, options: list, prompt: str) -> None:
         self.options = options
         self.prompt = prompt
 
-    def get_choice(self):
+    def get_choice(self) -> int:
         # Return the user's choice
         print(self.prompt)
         for i, option in enumerate(self.options):
             print(f"{i + 1}. {option}")
         return self._ask_user()
 
-    def _ask_user(self):
+    def _ask_user(self) -> int:
         # Use the input function to let the user choose among options
         choice = input("Enter the number of your choice: ")
         try:
