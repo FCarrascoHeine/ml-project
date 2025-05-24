@@ -4,7 +4,8 @@ from unittest.mock import patch
 from src.main import main
 import re
 
-def test_full_pipeline_accuracy():
+def test_full_pipeline_accuracy() -> None:
+    # Check the full pipeline by mocking user, training a model, and validating the result
     inputs = ['1', '1']  # Select 'Iris' and 'Logistic Regression'
     with patch('builtins.input', side_effect=inputs):
         captured_output = StringIO()

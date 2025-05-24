@@ -5,7 +5,15 @@ from sklearn.tree import DecisionTreeClassifier
 from src.chooser import OptionChooser
 from src.trainer import MLTrainer
 
-def main():
+def main() -> None:
+    """
+    Executes a simple, interactive machine learning pipeline.
+
+    Steps:
+    - Choose between two datasets: Iris and Wine.
+    - Choose between two classification algorithms: Logistic Regression and Decision Tree.
+    - Train the chosen model on the selected dataset and evaluate its accuracy.
+    """
     datasets = {
         "Iris": load_iris,
         "Wine": load_wine
