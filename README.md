@@ -8,12 +8,13 @@ This repository is an evolving Python project focused on building a simple, inte
 - Choose between two classification algorithms: **Logistic Regression** and **Decision Tree**.
 - Train the chosen model on the selected dataset and evaluate its accuracy.
 
-## Current Features
+## Current features
 
 - Users can choose among several machine learning algorithms.
 - Users can select from a few predefined datasets.
 - Basic structure set up for future enhancements.
 - **Basic unit and integration tests included**, with tests running automatically on GitHub Actions on pushes and pull requests.
+- **Automatic image creation and push to Docker Hub** on changes to the `main` branch, via GitHub Actions.
 
 ## What the script does now
 
@@ -39,7 +40,23 @@ This repository is an evolving Python project focused on building a simple, inte
 - Run tests locally with `pytest`
 - Tests are automatically run on GitHub Actions for every push and pull request.
 
-## Next Steps
+## Docker image
+
+- A Dockerfile is included for containerization.
+- On every push to the `main` branch, a new Docker image is automatically built and pushed to Docker Hub.
+
+### Testing Docker images locally
+
+You can test the most recent image locally by running:
+
+```bash
+docker pull your-dockerhub-username/ml-project:latest
+docker run -it --rm your-dockerhub-username/ml-project:latest
+```
+
+Replace `your-dockerhub-username` with your actual Docker Hub username.
+
+## Next steps
 
 - Adding support for user-provided data.
 - Implementing training parameter configuration.
