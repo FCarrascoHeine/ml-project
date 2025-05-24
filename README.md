@@ -8,7 +8,7 @@ This repository is an evolving Python project focused on building a simple, inte
 - Choose between two classification algorithms: **Logistic Regression** and **Decision Tree**.
 - Train the chosen model on the selected dataset and evaluate its accuracy.
 
-## Current Features
+## Current features
 
 - Users can choose among several machine learning algorithms.
 - Users can select from a few predefined datasets.
@@ -57,7 +57,7 @@ This workflow allows you to verify the Dockerized app behaves as expected before
 - Run tests locally with `pytest`
 - Tests are automatically run on GitHub Actions for every push and pull request.
 
-## Next Steps
+## Next steps
 
 - Adding support for user-provided data.
 - Implementing training parameter configuration.
