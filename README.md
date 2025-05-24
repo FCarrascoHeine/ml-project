@@ -14,6 +14,7 @@ This repository is an evolving Python project focused on building a simple, inte
 - Users can select from a few predefined datasets.
 - Basic structure set up for future enhancements.
 - **Basic unit and integration tests included**, with tests running automatically on GitHub Actions on pushes and pull requests.
+- Dockerfile included, allowing for seamless creation of docker images.
 
 ## What the script does now
 
@@ -33,6 +34,26 @@ This repository is an evolving Python project focused on building a simple, inte
 1. Make sure you have the required packages installed (see `requirements.txt`).
 2. Run `python -m src.main`.
 3. Follow the prompts to select the dataset and model.
+
+## Docker: Build and test images
+
+To build and test a Docker image for this project locally, ensure you have [Docker installed and running](https://docs.docker.com/get-docker/).
+
+1. **Build the image** (assuming the project directory contains the Dockerfile):
+
+```
+docker build -t my-project .
+```
+> Note: `my-project` is an example image name and can be changed.
+
+2. **Run the container** to test the app inside Docker:
+
+```
+docker run -it --rm my-project
+```
+This command runs the CLI app interactively inside the container, similar to running `python -m src.main` locally.
+
+This workflow allows you to verify the Dockerized app behaves as expected before pushing the image to a container registry or setting up automated deployment.
 
 ## Testing
 
