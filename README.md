@@ -40,16 +40,13 @@ This repository is an evolving Python project focused on building a simple, inte
 To build and test a Docker image for this project locally, ensure you have [Docker installed and running](https://docs.docker.com/get-docker/).
 
 1. **Build the image** (assuming the project directory contains the Dockerfile):
-
 ```
-docker build -t my-project .
+docker build -t ml-project .
 ```
-> Note: `my-project` is an example image name and can be changed.
 
 2. **Run the container** to test the app inside Docker:
-
 ```
-docker run -it --rm my-project
+docker run -it --rm ml-project
 ```
 This command runs the CLI app interactively inside the container, similar to running `python -m src.main` locally.
 
