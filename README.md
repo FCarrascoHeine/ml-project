@@ -2,6 +2,8 @@
 
 **Status:** Under Construction 🚧
 
+🚨 **IMPORTANT NOTE:** Title of commit "Feature - Automated deployment (#5)" is misleading: only automatic image creation is currently implemented.
+
 This repository is an evolving Python project focused on building a simple, interactive machine learning pipeline. Currently, it allows the user to:
 
 - Choose between two datasets: **Iris** and **Wine**.
