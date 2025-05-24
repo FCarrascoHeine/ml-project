@@ -13,7 +13,7 @@ This repository is an evolving Python project focused on building a simple, inte
 - Users can choose among several machine learning algorithms.
 - Users can select from a few predefined datasets.
 - Basic structure set up for future enhancements.
-- **Basic unit tests included** for key components (`OptionChooser` and `MLTrainer`), with tests running automatically on GitHub Actions on pushes and pull requests.
+- **Basic unit and integration tests included**, with tests running automatically on GitHub Actions on pushes and pull requests.
 
 ## What the script does now
 
@@ -36,17 +36,13 @@ This repository is an evolving Python project focused on building a simple, inte
 
 ## Testing
 
-- Run tests locally with:  
-  ```
-  pytest
-  ```
+- Run tests locally with `pytest`
 - Tests are automatically run on GitHub Actions for every push and pull request.
 
 ## Next Steps
 
 - Adding support for user-provided data.
 - Implementing training parameter configuration.
-- Expanding test coverage.
 - Setting up Continuous Deployment (CD) to automate deployment.
 
 Feel free to explore and contribute!

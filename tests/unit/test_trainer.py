@@ -3,7 +3,8 @@ from sklearn.linear_model import LogisticRegression
 from src.trainer import MLTrainer
 
 
-def test_train_and_evaluate():
+def test_train_and_evaluate() -> None:
+    # Check if training a model results in a valid accuracy value 
     data = load_iris()
     model = LogisticRegression(max_iter=200)
     trainer = MLTrainer(model, data)
