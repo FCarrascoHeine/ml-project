@@ -1,8 +1,16 @@
 # Simple ML Pipeline
 
+### **MAIN CONTRIBUTIONS:**
+- Automatic execution of a test pipeline when pushing changes.
+- Docker image is automatically created and pushed to Docker Hub when changes are merged to `main`.
+
+---
+
 **Status:** Under Construction 🚧
 
 🚨 **IMPORTANT NOTE:** Title of commit "Feature - Automated deployment (#5)" is misleading: only automatic image creation is currently implemented.
+
+---
 
 This repository is an evolving Python project focused on building a simple, interactive machine learning pipeline. Currently, it allows the user to:
 
@@ -62,6 +70,6 @@ Replace `your-dockerhub-username` with your actual Docker Hub username.
 
 - Adding support for user-provided data.
 - Implementing training parameter configuration.
-- Setting up Continuous Deployment (CD) to automate deployment.
+- Setting up Continuous Deployment (CD).
 
 Feel free to explore and contribute!
